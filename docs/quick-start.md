@@ -33,6 +33,9 @@ Then, copy the commands below to apply the quick-start manifest:
 kubectl create namespace argo
 kubectl apply --server-side -n argo -f "https://github.com/argoproj/argo-workflows/releases/download/${ARGO_WORKFLOWS_VERSION}/quick-start-minimal.yaml"
 ```
+!!! Note "Argo Workflows versions before 4.x"
+Argo Workflows versions before 4.x may use the archived quay.io/minio/minio image in their quick-start manifests. If the image cannot be pulled, manually replace the MinIO image with a S3-compatible object storage image before applying the manifest.
+To choose something that works in 4.x, make the same changes to the manifest that you see in this: https://github.com/argoproj/argo-workflows/pull/17073/changes#diff-1315ded46f2389ff7493540957ce962df03bb6ce98c05be47dc9287d19d1b840
 
 ## Install the Argo Workflows CLI
 
